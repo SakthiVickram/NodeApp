@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('stage2') {
+      steps {
+        slackSend(color: 'green', message: 'success', channel: 'jenkinsbuild2')
+      }
+    }
+
   }
 }
