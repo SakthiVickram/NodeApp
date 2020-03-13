@@ -6,7 +6,7 @@ pipeline {
         stage('stage1') {
           steps {
             echo 'hello'
-            slackSend(channel: 'jenkinsbuild2',baseUrl:'${env.BUILD.URL}', message: 'started now ', tokenCredentialId: 'jenkins-slack-integration', color: '#2056e8')
+            slackSend(channel: 'jenkinsbuild2',baseUrl:'${env.BUILD_URL}', message: 'started now ', tokenCredentialId: 'jenkins-slack-integration', color: '#2056e8')
           }
         }
 
