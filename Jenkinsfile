@@ -20,7 +20,11 @@ pipeline {
     }
 
     stage('stage2') {
+       when {
+                branch 'development'
+            }
       steps {
+        echo "after development"
         slackSend(color: 'green', message: 'success', channel: 'jenkinsbuild2')
       }
     }
