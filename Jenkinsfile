@@ -25,6 +25,8 @@ pipeline {
             }
       steps {
         echo "after development"
+        input message: "Do you want to approve the deploy in production?",ok: "Yes"
+         sh 'git checkout master'
         slackSend(color: 'green', message: 'success', channel: 'jenkinsbuild2')
       }
     }
