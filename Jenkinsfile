@@ -26,7 +26,7 @@ pipeline {
       steps {
         echo "after development"
         input message: "Do you want to approve the deploy in production?",ok: "Yes"
-         bat 'git.exe checkout master'
+         bat 'git rev-parse --abbrev-ref HEAD'
         slackSend(color: 'green', message: 'success', channel: 'jenkinsbuild2')
       }
     }
