@@ -12,9 +12,7 @@ pipeline {
 
         stage('stage1.1') {
           steps {
-            def props = readJSON file: 'test.json'
-            echo "$props"
-            echo "$props["fruit"]"
+          
             echo 'world'
           }
         }
